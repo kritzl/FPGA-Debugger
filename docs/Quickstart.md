@@ -1,7 +1,8 @@
 # Quickstart
 
 ## Schritt 1: FPGA mit Quartus flashen
-
+- Projekt in [bla](/src/fpga)
+Um unseren Prozessor und FPGA Code 
 
 ## Schritt 2: Mikrocontroller (ESP32) mit Arduino IDE flashen
  - Projekt in `/src/microcontroller` mit der Arduino IDE öffnen.
