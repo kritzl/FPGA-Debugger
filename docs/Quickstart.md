@@ -24,4 +24,4 @@ Folgende Bauteile werden zum Bestücken der Platine benötigt:
   *Für den Anschluss eines SPI LC-Displays an des ESP-32*
 - Ggf. LC-Display mit Display-Controller `ILI9341`  
   z.B. https://www.waveshare.com/wiki/2.4inch_LCD_Module
-- 
+- 2x 40-Pin ATA-Kabel
