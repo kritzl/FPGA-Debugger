@@ -1,4 +1,4 @@
 # Dokumentation des FPGA-Debuggers
 
 
-[Debugging Tool](web/)
+[Debugging Tool](src/web/)
