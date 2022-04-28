@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PISO Debugger</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="statusBar" style="text-align: center; height: 5vh;">Disconnected</div>
+    <div style="display: flex; flex-grow: 1;">
+        <div style="width: 50%; display: flex; flex-direction: column; height: 95vh; background-color: #222;">
+            <div style="flex: 1;
+            display: flex;
+            overflow: auto;
+            flex-direction: column;">
+                <div id="log" style="display: flex;
+                    align-items: start;
+                    flex-direction: column;
+                    justify-content: end;
+                    gap: 0.5em;
+                    padding-bottom: 1em;
+                    box-sizing: border-box;
+                    flex: 1;">
+                </div>
+            </div>
+        </div>
+        <div style="width: 50%; display: flex; flex-direction: column; height: 95vh;">
+            <div style="flex: 1;
+            display: flex;
+            overflow: auto;
+            flex-direction: column;">
+                <div id="receiveText" style="display: flex;
+                    align-items: start;
+                    flex-direction: column;
+                    justify-content: end;
+                    gap: 0.5em;
+                    padding-bottom: 1em;
+                    box-sizing: border-box;
+                    flex: 1;">
+                    <span class="debug">type "connect" to choose a serial device</span>
+                </div>
+            </div>
+
+            <input id="sendText" type="text"
+                style="font-size: 14pt; font-family: monospace; background-color: #333; border: none; color: #fff;" />
+        </div>
+    </div>
+    <script type="text/javascript" src="/serial.js"></script>
+</body>
+
+</html>
