@@ -17,7 +17,7 @@ Drücke anschließend auf den `Programmer` Knopf (rechts vom Compile Knopf). Dad
 ## Schritt 2: Mikrocontroller (ESP32) mit Arduino IDE flashen
 Zuerst solltest du das Projekt in [`/src/microcontroller`](https://github.com/kritzl/FPGA-Debugger/tree/main/src/microcontroller) mit der Arduino IDE öffnen. Natürlich kannst du z.B. auch die VS-Code Erweiterung nutzen, wir erklären hier aber die Variante mit der Arduino IDE selbst.  
 Da der von uns verwendete Mikrocontroller kein "echter" Arduino ist, müssen wir der IDE zunächst beibringen, wo die Board-Definitionen zu finden sind.  
-Dazu tragen wir unter `Date -> Voreinstellungen` im Feld Zusätzliche Bordverwalter-URLs`` folgendes ein:
+Dazu tragen wir unter `Date -> Voreinstellungen` im Feld Zusätzliche Bordverwalter-URLs folgendes ein:
 ```
 https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
 ```
@@ -27,11 +27,12 @@ Wenn bis jetzt alles geklappt hat, musst du nur noch auf `Sketch -> Hochladen` k
 
 
 ## Schritt 3: Debugging-Software starten
-Da wir mithilfe der Serial-API eine Website als Debugging-Software nutzen können, muss lediglich der Inhalt des Verzeichnisses `/src/web` mit einem simplen Webserver zur Verfügung gestellt werden. Alternativ ist die Website über GitHub Pages unter [fpga.kritzl.dev](https://fpga.kritzl.dev) bereitgestellt.
+Da wir mithilfe der Serial-API eine Website als Debugging-Software nutzen können, muss lediglich der Inhalt des Verzeichnisses `/src/web` mit einem simplen Webserver zur Verfügung gestellt werden. Alternativ ist die Website über GitHub Pages [HIER](https://kritzl.github.io/FPGA-Debugger/) bereitgestellt.
 
 ## Schritt 4: Verwendung des Debuggers
 Erste Schritte:
-- FPGA mit dem Debugger-Board verbinden
+- FPGA mit dem Debugger-Board verbinden  
+  **Achtung! Das die ATA-Pinleisten auf dem FPGA symmetrisch angeordnet sind (die Auskerbung zur orientierung zeigt zur Mitte des Boards) musst du darauf Achten, dass der mit GPIO0 beschriftete Port auf dem Debugger-Board auch mit der Pinleiste GPIO0 am FPGA verbunden ist (Entsprechend natürlich auch bei "GPIO1")**
 - Mikrocontroller auf Board stecken
 - Mikrocontroller mit Computer verbinden (USB)
 - Debugger Software öffnen (Je nach lokalem Webserver z.B. http://localhost:8000)
