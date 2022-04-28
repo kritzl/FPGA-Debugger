@@ -15,7 +15,16 @@ Drücke nun den `Compile` Knopf (blauer Pfeil) in Quartus, damit das Projekt kom
 Drücke anschließend auf den `Programmer` Knopf (rechts vom Compile Knopf). Dadurch sollte sich ein neues Fenster öffnen. In diesem Fenster drücke auf `Hardware Setup...` und wähle den FPGA aus *(Falls der FPGA nicht in der Liste erscheint, musst du noch den Treiber für den FPGA installieren. Dieser wird bei Quartus mitgeliefert (auf Windows in `C:/intelFPGA_lite/21.1/quartus/drivers/usb-blaster`))*. Anschließend drücke `Start`, um den Programmer zu starten.
 
 ## Schritt 2: Mikrocontroller (ESP32) mit Arduino IDE flashen
- - Projekt in [`/src/microcontroller`](https://github.com/kritzl/FPGA-Debugger/tree/main/src/microcontroller) mit der Arduino IDE öffnen.
+Zuerst solltest du das Projekt in [`/src/microcontroller`](https://github.com/kritzl/FPGA-Debugger/tree/main/src/microcontroller) mit der Arduino IDE öffnen. Natürlich kannst du z.B. auch die VS-Code Erweiterung nutzen, wir erklären hier aber die Variante mit der Arduino IDE selbst.  
+Da der von uns verwendete Mikrocontroller kein "echter" Arduino ist, müssen wir der IDE zunächst beibringen, wo die Board-Definitionen zu finden sind.  
+Dazu tragen wir unter `Date -> Voreinstellungen` im Feld Zusätzliche Bordverwalter-URLs`` folgendes ein:
+```
+https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+```
+Nachdem du mit `OK` bestätigt hast, sollte ein Eintrag `esp32` unter `Werkzeuge -> Board: [...] -> Bordverwalter` auftauchen, bei welchem du auf `Installieren` klicken kannst.  
+Sobald die Boardinformationen fertig heruntergeladen wurden, kannst du nun unter `Werkzeuge -> Board: [...] -> ESP32 Arduino` den Eintrag `ESP32 Dev Module` wählen. Welcher Eintrag hier der richtige für dich ist, hängt allerdings davon ab, welcher Mikrocontroller genau verwendet wird - im Zweifel muss man hier etwas herumprobieren und auf der Hersteller-/Verkäuferwebsite nachschauen. Jetzt musst du unter `Werkzeuge -> Port` nur noch den richtigen Port wählen, an dem der Mikrocontroller mit dem Computer verbunden ist. Mit etwas Glück steht hier sogar die Bezeichnung des Mikrocontrollers mit in der Liste an Geräten. Wenn du Pech hast, musst du erstmal den richtigen Treiber herunterladen, damit der Mikrocontroller von deinem Betriebssystem erkannt wird - in diesem Fall hilft dir vielleicht die Seite von Espressif zu diesem Thema weiter: [docs.espressif.com](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/establish-serial-connection.html).  
+Wenn bis jetzt alles geklappt hat, musst du nur noch auf `Sketch -> Hochladen` klicken und hoffen, dass alles funktioniert. Gegebenenfalls muss beim Hochladen noch ein Button auf dem Mikrocontroller gedrückt werden, damit das schreiben erlaubt wird. Dieser Button kann z.B. mit `BOOT` beschriftet sein.
+
 
 ## Schritt 3: Debugging-Software starten
 Da wir mithilfe der Serial-API eine Website als Debugging-Software nutzen können, muss lediglich der Inhalt des Verzeichnisses `/src/web` mit einem simplen Webserver zur Verfügung gestellt werden. Alternativ ist die Website über GitHub Pages unter [fpga.kritzl.dev](https://fpga.kritzl.dev) bereitgestellt.
