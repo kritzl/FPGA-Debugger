@@ -1,1 +1,6 @@
 theme: jekyll-theme-minimal
+title: FPGA Debugger
+description: Hardware-Debugger für das DE0-nano FPGA-Board.
+# logo: assets/logo.svg
+github:
+  is_project_page: false
