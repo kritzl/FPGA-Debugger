@@ -149,7 +149,7 @@ void serialEvent()
             if (command == "reset")
             {
                 digitalWrite(FPGA_RST, 0);
-                delay(2000);
+                delay(1250);
                 digitalWrite(FPGA_RST, 1);
 
                 sendDebug("OK");
