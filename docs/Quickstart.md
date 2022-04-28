@@ -21,17 +21,18 @@ Drücke anschließend auf den `Programmer` Knopf (rechts vom Compile Knopf). Dad
 Da wir mithilfe der Serial-API eine Website als Debugging-Software nutzen können, muss lediglich der Inhalt des Verzeichnisses `/src/web` mit einem simplen Webserver zur Verfügung gestellt werden. Alternativ ist die Website über GitHub Pages unter [fpga.kritzl.dev](https://fpga.kritzl.dev) bereitgestellt.
 
 ## Schritt 4: Verwendung des Debuggers
+Erste Schritte:
 - FPGA mit dem Debugger-Board verbinden
 - Mikrocontroller auf Board stecken
 - Mikrocontroller mit Computer verbinden (USB)
-- Debugger Software öffnen
+- Debugger Software öffnen (Je nach lokalem Webserver z.B. http://localhost:8000)
 
 Die Debugger Website ist ähnlich wie ein terminal aufgebaut.
 Im rechten Bereich kannst du Befehle eintippen, während du auf der Linken Seite die Ausgabe des Mikrocontrollers siehst.
 Um eine Verbindung zwischen der Website und dem Mikrocontroller herzustellen, muss der Befehl `connect` eingegeben und mit <kbd>Enter</kbd> bestätigt werden.
 Anschließend sollte der Browser dich auffordern ein Serielles Gerät auszuwählen. Nachdem die Verbindugn erfolgreich hergestellt wurde, wird die Ausgabe zunächst automatisch synchronisiert. Dies kann auch manuell mit dem Befehl `moin` erzwungen werden.  
 Um den FPGA über den Pin `GPIO0-0` zurückzusetzen, kannst du den Befehl `reset` eingeben. Nun sollte der FPGA die Ausführung des Programms starten und auf der linken Seite jede Aktualisierung des Programmzählers erscheinen. Falls bei einem Schritt des Programms etwas in ein Register geschrieben wird, wir die entsprechende Adresse und der zu schreibende Inhalt angezeigt.  
-Du solltest beachten, dass durch 
+*Du solltest beachten, dass durch unsere Pipeline die Schreibvorgänge nicht zum eigentlichen Progrmmcounter, sondern etwas später im Log auftauchen.*
 
 ## (optional) Debugger-Board herstellen
 Insgesamt sind 68 Pins des FPGA an den Mikrocontroller angeschlossen. Damit das möglich ist, benutzen wir sog. "Parallel-In-Serial-Out" Shiftregister.
