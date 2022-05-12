@@ -35,7 +35,7 @@ Erste Schritte:
   **Achtung! Das die ATA-Pinleisten auf dem FPGA symmetrisch angeordnet sind (die Auskerbung zur orientierung zeigt zur Mitte des Boards) musst du darauf Achten, dass der mit GPIO0 beschriftete Port auf dem Debugger-Board auch mit der Pinleiste GPIO0 am FPGA verbunden ist (Entsprechend natürlich auch bei "GPIO1")**
 - Mikrocontroller auf Board stecken
 - Mikrocontroller mit Computer verbinden (USB)
-- Debugger Software öffnen (Je nach lokalem Webserver z.B. http://localhost:8000)
+- Debugger Software öffnen (Je nach lokalem Webserver z.B. http://localhost:8000 oder [die gehostete Version](https://kritzl.github.io/FPGA-Debugger/))
 
 Die Debugger Website ist ähnlich wie ein terminal aufgebaut.
 Im rechten Bereich kannst du Befehle eintippen, während du auf der Linken Seite die Ausgabe des Mikrocontrollers siehst.
