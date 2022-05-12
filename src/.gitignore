@@ -1,0 +1,14 @@
+fpga/db/*
+fpga/incremental_db/*
+fpga/simulation/*
+fpga/*.bak
+fpga/*.rpt
+fpga/*.summary
+fpga/de0Board.done
+fpga/de0Board.cdf
+fpga/de0Board.jdi
+fpga/de0Board.pin
+fpga/de0Board.sof
+fpga/de0Board.fit.smsg
+fpga/.qsys_edit/*
+fpga/greybox_tmp/*
